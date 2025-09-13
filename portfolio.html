@@ -3,70 +3,495 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio</title>
-
-</head>
-<body>
-  <header>
-<img src="https://media.licdn.com/dms/image/v2/D4E03AQForif6MzfpLQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718275133783?e=1760572800&v=beta&t=GMijBOQFws2z1ny_-qcVHvnxga06F5uvplyd5hXN-bU" width="150" height="150" alt="deo"/>
-<h1>Adeola Ekundayo</h1>
-<h4>IT Professional | Full Stack Web Developer • AWS Cloud Practitioner • Data Analyst</h4>
-</header>
-  <main>
-<div>
-<h2>About Me</h2>
-<p>Hi, I’m Adeola Ekundayo. I’m on an exciting journey as a Full Stack Web Developer, building a strong foundation in creating responsive, user-friendly applications with HTML, CSS, JavaScript, Python, SQL, and Node.js. My experience so far comes from education and training, but I treat every project as a chance to sharpen my skills and expand my portfolio.</p>
-
-<p>Alongside web development, I’ve studied AWS cloud computing, exploring how cloud services, CI/CD pipelines, and data workflows come together to deliver efficient solutions.</p>
-
-<p>Building on that, my background in analytics—researching, collecting, organizing, and transforming data into insights—gives me a unique perspective as a developer, helping me design projects that are both functional and data-driven.</p>
-
-<p>I’m eager to keep learning, take on real-world challenges, and grow as a web developer by building applications that not only function smoothly but also solve problems in creative, user-focused ways.</p>
-</div>
-
-<div><h2>Skills</h2>
-<h3>🌐 Full Stack Web Development</h3>
-    <ul>
-      <li style="margin-bottom: 5px;"><b>Frontend</b>: HTML5, CSS3, JavaScript (ES6+), Responsive Design, Bootstrap, Tailwind CSS</li>
-      <li style="margin-bottom: 5px;"><b>Backend / Logic</b>: Node.js, Express.js, RESTful APIs</li>
-      <li style="margin-bottom: 5px;"><b>Version control</b> with Git & GitHub</li>
-      <li style="margin-bottom: 5px;"><b>Web Tools</b>: VS Code, Chrome DevTools, NPM, JSON</li>
-      <li style="margin-bottom: 5px;"><b>Additional</b>: Basic SEO, Debugging, Cross-browser compatibility</li>
-    </ul>
+  <title>Adeola Ekundayo - Portfolio</title>
   
-    <h3>📊 Data Analytics</h3>
-    <ul>
-      <li style="margin-bottom: 5px;"><b>Programming & Querying</b>: SQL (joins, CTEs, subqueries), Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
-      <li style="margin-bottom: 5px;"><b>Databases</b>: MySQL, PostgreSQL, MongoDB</li>
-      <li style="margin-bottom: 5px;"><b>Data Visualization</b>: Tableau, Power BI, Excel (Pivot Tables, VLOOKUP, Charts)</li>
-      <li style="margin-bottom: 5px;"><b>Data Preparation</b>: ETL processes, Data cleaning, Data wrangling</li>
-      <li style="margin-bottom: 5px;"><b>Statistics</b>: Descriptive/Inferential Statistics, Hypothesis Testing, Correlation & Regression Analysis</li>
-	  <li style="margin-bottom: 5px;"><b>Business Insight</b>: KPI tracking, Dashboard creation, Storytelling with data</li>
-	</ul>
-	  
-	 <h3>☁️ AWS Cloud Computing Skills</h3>
-	<ul>
-	<li style="margin-bottom: 5px;"><b>Core AWS Services</b>: EC2, S3, RDS, Lambda, VPC</li>
-	<li style="margin-bottom: 5px;"><b>Identity & Security</b>: IAM (roles, policies), CloudTrail, CloudWatch, Security Groups</li>
-	<li style="margin-bottom: 5px;"><b>Infrastructure as Code</b>: CloudFormation, Elastic Beanstalk basics</li>
-	<li style="margin-bottom: 5px;"><b>Networking</b>: VPC setup, Subnets, Route Tables, Load Balancing (ELB)</li>
-	<li style="margin-bottom: 5px;"><b>Storage & Databases</b>: DynamoDB, RDS, S3 lifecycle policies</li>
-	<li style="margin-bottom: 5px;"><b>Deployment & Automation</b>: CI/CD concepts, AWS CLI, SDK basics</li>
-	 </ul>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #0d47a1;      /* Darker blue */
+      --secondary-color: #42b883;    /* Green */
+      --accent-color: #ff6b6b;       /* Red accent */
+      --text-dark: #1c1e21;          /* Dark text */
+      --text-light: #65676b;         /* Light text */
+      --bg-light: #f0f2f5;           /* Light background */
+      --white: #ffffff;              /* White */
+      --border-color: #dadde1;       /* Border color */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .cover-photo {
+      height: 300px;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      position: relative;
+      border-radius: 0 0 15px 15px;
+    }
+
+    .profile-section {
+      background: var(--white);
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-top: -100px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid var(--white);
+      object-fit: cover;
+      margin-top: -75px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .profile-name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-title {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-card {
+      background: var(--white);
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border: none;
+      margin-bottom: 2rem;
+    }
+
+    .section-header {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--primary-color);
+    }
+
+    .skill-category {
+      margin-bottom: 2rem;
+    }
+
+    .skill-category h4 {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .skill-item {
+      background: var(--bg-light);
+      border-radius: 10px;
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.5rem;
+      border-left: 4px solid var(--primary-color);
+      transition: transform 0.2s ease;
+    }
+
+    .skill-item:hover {
+      transform: translateX(5px);
+    }
+
+    .skill-item strong {
+      color: var(--text-dark);
+    }
+
+    .certificate-card {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      border: none;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .certificate-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      border: none;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info {
+      background: var(--primary-color);
+      color: var(--white);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      margin-bottom: 1rem;
+    }
+
+    .contact-item i {
+      margin-right: 0.5rem;
+      width: 20px;
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      border: none;
+      border-radius: 25px;
+      padding: 0.8rem 2rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-primary {
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      border-radius: 25px;
+      padding: 0.8rem 2rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-primary:hover {
+      background: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    .social-links a {
+      color: var(--white);
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    @media (max-width: 768px) {
+      .profile-name {
+        font-size: 2rem;
+      }
+      
+      .profile-img {
+        width: 120px;
+        height: 120px;
+        margin-top: -60px;
+      }
+      
+      .cover-photo {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Cover Photo Section -->
+  <div class="cover-photo"></div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Profile Section -->
+    <div class="profile-section p-4 mb-4">
+      <div class="row">
+        <div class="col-md-3 text-center">
+          <img src="https://media.licdn.com/dms/image/v2/D4E03AQForif6MzfpLQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718275133783?e=1760572800&v=beta&t=GMijBOQFws2z1ny_-qcVHvnxga06F5uvplyd5hXN-bU" 
+               alt="Adeola Ekundayo" class="profile-img">
+        </div>
+        <div class="col-md-9">
+          <h1 class="profile-name">Adeola Ekundayo</h1>
+          <p class="profile-title">IT Professional | Full Stack Web Developer • AWS Cloud Practitioner • Data Analyst</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <button class="btn btn-primary">
+              <i class="fas fa-envelope me-2"></i>Contact
+            </button>
+            <button class="btn btn-outline-primary">
+              <i class="fas fa-download me-2"></i>Download CV
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Left Column -->
+      <div class="col-lg-8">
+        <!-- About Me Section -->
+        <div class="card section-card">
+          <div class="card-body p-4">
+            <h2 class="section-header">
+              <i class="fas fa-user me-2"></i>About Me
+            </h2>
+            <p class="mb-3">Hi, I'm Adeola Ekundayo. I'm on an exciting journey as a Full Stack Web Developer, building a strong foundation in creating responsive, user-friendly applications with HTML, CSS, JavaScript, Python, SQL, and Node.js. My experience so far comes from education and training, but I treat every project as a chance to sharpen my skills and expand my portfolio.</p>
+            
+            <p class="mb-3">Alongside web development, I've studied AWS cloud computing, exploring how cloud services, CI/CD pipelines, and data workflows come together to deliver efficient solutions.</p>
+            
+            <p class="mb-3">Building on that, my background in analytics—researching, collecting, organizing, and transforming data into insights—gives me a unique perspective as a developer, helping me design projects that are both functional and data-driven.</p>
+            
+            <p>I'm eager to keep learning, take on real-world challenges, and grow as a web developer by building applications that not only function smoothly but also solve problems in creative, user-focused ways.</p>
+          </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="card section-card">
+          <div class="card-body p-4">
+            <h2 class="section-header">
+              <i class="fas fa-code me-2"></i>Skills & Expertise
+            </h2>
+            
+            <div class="skill-category">
+              <h4><i class="fas fa-globe me-2"></i>Full Stack Web Development</h4>
+              <div class="skill-item">
+                <strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), Responsive Design, Bootstrap, Tailwind CSS
+              </div>
+              <div class="skill-item">
+                <strong>Backend / Logic:</strong> Node.js, Express.js, RESTful APIs
+              </div>
+              <div class="skill-item">
+                <strong>Version Control:</strong> Git & GitHub
+              </div>
+              <div class="skill-item">
+                <strong>Web Tools:</strong> VS Code, Chrome DevTools, NPM, JSON
+              </div>
+              <div class="skill-item">
+                <strong>Additional:</strong> Basic SEO, Debugging, Cross-browser compatibility
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4><i class="fas fa-chart-bar me-2"></i>Data Analytics</h4>
+              <div class="skill-item">
+                <strong>Programming & Querying:</strong> SQL (joins, CTEs, subqueries), Python (Pandas, NumPy, Matplotlib, Seaborn)
+              </div>
+              <div class="skill-item">
+                <strong>Databases:</strong> MySQL, PostgreSQL, MongoDB
+              </div>
+              <div class="skill-item">
+                <strong>Data Visualization:</strong> Tableau, Power BI, Excel (Pivot Tables, VLOOKUP, Charts)
+              </div>
+              <div class="skill-item">
+                <strong>Data Preparation:</strong> ETL processes, Data cleaning, Data wrangling
+              </div>
+              <div class="skill-item">
+                <strong>Statistics:</strong> Descriptive/Inferential Statistics, Hypothesis Testing, Correlation & Regression Analysis
+              </div>
+              <div class="skill-item">
+                <strong>Business Insight:</strong> KPI tracking, Dashboard creation, Storytelling with data
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4><i class="fab fa-aws me-2"></i>AWS Cloud Computing</h4>
+              <div class="skill-item">
+                <strong>Core AWS Services:</strong> EC2, S3, RDS, Lambda, VPC
+              </div>
+              <div class="skill-item">
+                <strong>Identity & Security:</strong> IAM (roles, policies), CloudTrail, CloudWatch, Security Groups
+              </div>
+              <div class="skill-item">
+                <strong>Infrastructure as Code:</strong> CloudFormation, Elastic Beanstalk basics
+              </div>
+              <div class="skill-item">
+                <strong>Networking:</strong> VPC setup, Subnets, Route Tables, Load Balancing (ELB)
+              </div>
+              <div class="skill-item">
+                <strong>Storage & Databases:</strong> DynamoDB, RDS, S3 lifecycle policies
+              </div>
+              <div class="skill-item">
+                <strong>Deployment & Automation:</strong> CI/CD concepts, AWS CLI, SDK basics
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="card section-card">
+          <div class="card-body p-4">
+            <h2 class="section-header">
+              <i class="fas fa-project-diagram me-2"></i>Featured Projects
+            </h2>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="project-card">
+                  <div class="project-icon">
+                    <i class="fas fa-laptop-code"></i>
+                  </div>
+                  <h5>Portfolio Website</h5>
+                  <p>Modern, responsive portfolio website built with HTML5, CSS3, and JavaScript. Features include smooth animations, mobile-first design, and interactive elements.</p>
+                  <div class="d-flex gap-2">
+                    <span class="badge bg-primary">HTML5</span>
+                    <span class="badge bg-success">CSS3</span>
+                    <span class="badge bg-warning">JavaScript</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="project-card">
+                  <div class="project-icon">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
+                  <h5>Data Analytics Dashboard</h5>
+                  <p>Interactive dashboard for business intelligence using Python, Pandas, and Tableau. Includes data visualization, KPI tracking, and automated reporting.</p>
+                  <div class="d-flex gap-2">
+                    <span class="badge bg-info">Python</span>
+                    <span class="badge bg-primary">Tableau</span>
+                    <span class="badge bg-secondary">SQL</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="project-card">
+                  <div class="project-icon">
+                    <i class="fas fa-cloud"></i>
+                  </div>
+                  <h5>AWS Cloud Infrastructure</h5>
+                  <p>Scalable cloud infrastructure setup using AWS services including EC2, S3, RDS, and Lambda. Implemented CI/CD pipeline and monitoring solutions.</p>
+                  <div class="d-flex gap-2">
+                    <span class="badge bg-warning">AWS</span>
+                    <span class="badge bg-dark">Docker</span>
+                    <span class="badge bg-success">CI/CD</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="project-card">
+                  <div class="project-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <h5>Full Stack Web App</h5>
+                  <p>Complete web application with Node.js backend, Express.js API, and responsive frontend. Features user authentication, database integration, and real-time updates.</p>
+                  <div class="d-flex gap-2">
+                    <span class="badge bg-success">Node.js</span>
+                    <span class="badge bg-primary">Express</span>
+                    <span class="badge bg-info">MongoDB</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-lg-4">
+        <!-- Certificates Section -->
+        <div class="card section-card">
+          <div class="card-body p-4">
+            <h3 class="section-header">
+              <i class="fas fa-certificate me-2"></i>Certifications
+            </h3>
+            <div class="row">
+              <div class="col-12 mb-3">
+                <div class="certificate-card">
+                  <a href="https://www.coursera.org/account/accomplishments/professional-cert/U2BCFW3GRM4K" target="_blank">
+                    <img src="https://media.licdn.com/dms/image/v2/C5612AQErp9clmRktgw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1647235470704?e=2147483647&v=beta&t=ACqbO5dp90bbavpkIDk-ecEShzXbLnExzZ5Lauua93o" 
+                         alt="Google Data Analytics Certificate" class="certificate-img">
+                  </a>
+                  <h6>Google Data Analytics Professional Certificate</h6>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="certificate-card">
+                  <a href="https://www.credly.com/badges/bdde3715-e94d-4a24-b768-12b80cfee5b7/linked_in_profile" target="_blank">
+                    <img src="https://images.credly.com/size/680x680/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" 
+                         alt="AWS Cloud Practitioner Certificate" class="certificate-img">
+                  </a>
+                  <h6>AWS Cloud Practitioner Certificate</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-info">
+          <h3><i class="fas fa-envelope me-2"></i>Get In Touch</h3>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>adeola.ekundayo@email.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <span>linkedin.com/in/adeola-ekundayo</span>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <span>github.com/adeola-ekundayo</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Available for remote work</span>
+          </div>
+          
+          <div class="social-links mt-4">
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-<div>
-<h3>Certificates</h3>
-<a href="https://www.coursera.org/account/accomplishments/professional-cert/U2BCFW3GRM4K" style="display:inline-block; margin-right:20px;"><img src="https://media.licdn.com/dms/image/v2/C5612AQErp9clmRktgw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1647235470704?e=2147483647&v=beta&t=ACqbO5dp90bbavpkIDk-ecEShzXbLnExzZ5Lauua93o" width="300"/></a>
+  <!-- Footer -->
+  <footer class="bg-dark text-light text-center py-4 mt-5">
+    <div class="container">
+      <p>&copy; 2024 Adeola Ekundayo. All rights reserved.</p>
+      <p>Built with ❤️ using Bootstrap and modern web technologies</p>
+    </div>
+  </footer>
 
-<a href="https://www.credly.com/badges/bdde3715-e94d-4a24-b768-12b80cfee5b7/linked_in_profile" style="display:inline-block;"><img src="https://images.credly.com/size/680x680/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" width="300"></a>
-</div>
-
-<div>
-<h3>Projects</h3>
-
-</main>
-  <footer></footer>
-  <script src="script.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
