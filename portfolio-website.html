@@ -139,11 +139,13 @@
     .project-card {
       background: var(--white);
       border-radius: 15px;
-      padding: 2rem;
+      padding: 1.5rem;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
       border: none;
       height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card:hover {
@@ -151,9 +153,31 @@
     }
 
     .project-icon {
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: var(--primary-color);
+      margin-bottom: 0.75rem;
+    }
+
+    .project-card h5 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
       margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .project-card .d-flex.gap-2 {
+      margin-top: auto;
+    }
+
+    .project-card .badge {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.5rem;
     }
 
     .contact-info {
@@ -170,11 +194,28 @@
 
     .contact-item {
       margin-bottom: 1rem;
+      display: flex !important;
+      align-items: center !important;
+      flex-direction: row !important;
     }
 
-.contact-item i {
-      margin-right: 0.5rem;
+    .contact-item i {
+      margin-right: 0.25rem;
       width: 20px;
+      display: inline-block !important;
+      flex-shrink: 0 !important;
+    }
+
+    .contact-item a {
+      word-break: break-all;
+      overflow-wrap: anywhere;
+      display: inline !important;
+      white-space: nowrap;
+      flex: 1;
+    }
+
+    .contact-info .contact-item {
+      flex-wrap: nowrap;
     }
 
     .btn-primary {
@@ -264,7 +305,7 @@
 
     <div class="row">
       <!-- Left Column -->
-      <div class="col-lg-8">
+      <div class="col-lg-7">
         <!-- About Me Section -->
         <div class="card section-card">
           <div class="card-body p-4">
@@ -359,60 +400,50 @@
             <h2 class="section-header">
               <i class="fas fa-project-diagram me-2"></i>Featured Projects
             </h2>
-            <div class="row">
-              <div class="col-md-6 mb-4">
+              <div class="row">
+                <div class="col-lg-10 mb-4">
                 <div class="project-card">
                   <div class="project-icon">
-                    <i class="fas fa-laptop-code"></i>
+                    <i class="fas fa-music"></i>
                   </div>
-                  <h5>Portfolio Website</h5>
-                  <p>Modern, responsive portfolio website built with HTML5, CSS3, and JavaScript. Features include smooth animations, mobile-first design, and interactive elements.</p>
+                  <h5>Mic Drop Daily - Hip-Hop Blog</h5>
+                  <p>A modern, responsive blog website dedicated to hip-hop culture featuring 23+ articles, interactive filtering, contact forms, and a complete content management system. Built with clean HTML5, CSS3, and JavaScript.</p>
+                  <div class="d-flex gap-1 mb-3 flex-wrap">
+                    <span class="badge bg-primary small">HTML5</span>
+                    <span class="badge bg-success small">CSS3</span>
+                    <span class="badge bg-warning small">JavaScript</span>
+                    <span class="badge bg-info small">Responsive</span>
+                  </div>
                   <div class="d-flex gap-2">
-                    <span class="badge bg-primary">HTML5</span>
-                    <span class="badge bg-success">CSS3</span>
-                    <span class="badge bg-warning">JavaScript</span>
+                    <a href="https://github.com/deoekundayo/music_blog-demo" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <i class="fab fa-github me-1"></i>GitHub
+                    </a>
+                    <a href="https://musicblog-demo.netlify.app" target="_blank" class="btn btn-primary btn-sm">
+                      <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 mb-4">
+                <div class="col-lg-10 mb-4">
                 <div class="project-card">
                   <div class="project-icon">
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-utensils"></i>
                   </div>
-                  <h5>Data Analytics Dashboard</h5>
-                  <p>Interactive dashboard for business intelligence using Python, Pandas, and Tableau. Includes data visualization, KPI tracking, and automated reporting.</p>
+                  <h5>Restaurant Admin Dashboard</h5>
+                  <p>A comprehensive admin dashboard for restaurant management featuring order tracking, menu management, customer insights, and analytics. Built with modern UI design and responsive layout for restaurant staff.</p>
+                  <div class="d-flex gap-1 mb-3 flex-wrap">
+                    <span class="badge bg-primary small">HTML5</span>
+                    <span class="badge bg-success small">CSS3</span>
+                    <span class="badge bg-warning small">JavaScript</span>
+                    <span class="badge bg-info small">Bootstrap</span>
+                  </div>
                   <div class="d-flex gap-2">
-                    <span class="badge bg-info">Python</span>
-                    <span class="badge bg-primary">Tableau</span>
-                    <span class="badge bg-secondary">SQL</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="project-card">
-                  <div class="project-icon">
-                    <i class="fas fa-cloud"></i>
-                  </div>
-                  <h5>AWS Cloud Infrastructure</h5>
-                  <p>Scalable cloud infrastructure setup using AWS services including EC2, S3, RDS, and Lambda. Implemented CI/CD pipeline and monitoring solutions.</p>
-                  <div class="d-flex gap-2">
-                    <span class="badge bg-warning">AWS</span>
-                    <span class="badge bg-dark">Docker</span>
-                    <span class="badge bg-success">CI/CD</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="project-card">
-                  <div class="project-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                  </div>
-                  <h5>Full Stack Web App</h5>
-                  <p>Complete web application with Node.js backend, Express.js API, and responsive frontend. Features user authentication, database integration, and real-time updates.</p>
-                  <div class="d-flex gap-2">
-                    <span class="badge bg-success">Node.js</span>
-                    <span class="badge bg-primary">Express</span>
-                    <span class="badge bg-info">MongoDB</span>
+                    <a href="https://github.com/deoekundayo/resturaunt-demo" target="_blank" class="btn btn-outline-primary btn-sm">
+                      <i class="fab fa-github me-1"></i>GitHub
+                    </a>
+                    <a href="https://resturauntadmindashboard.netlify.app" class="btn btn-primary btn-sm">
+                      <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                    </a>
                   </div>
                 </div>
               </div>
@@ -422,7 +453,7 @@
       </div>
 
       <!-- Right Column -->
-      <div class="col-lg-4">
+      <div class="col-lg-5">
         <!-- Certificates Section -->
         <div class="card section-card">
           <div class="card-body p-4">
@@ -477,8 +508,7 @@
   <!-- Footer -->
   <footer class="bg-dark text-light text-center py-4 mt-5">
     <div class="container">
-      <p>&copy; 2024 Adeola Ekundayo. All rights reserved.</p>
-      <p>Built with ❤️ using Bootstrap and modern web technologies</p>
+      <p>&copy; 2025 Adeola Ekundayo. All rights reserved.</p>
     </div>
   </footer>
 
