@@ -30,14 +30,22 @@ A modern, responsive portfolio website showcasing my skills as a Full Stack Web 
 
 [View Live Portfolio](https://your-portfolio-url.com) *(Replace with your actual URL)*
 
-## 🛠️ Technologies Used
+## 🛠️ Technologies & Frameworks
 
-### Frontend
+### Frontend Frameworks & Libraries
+
+#### CSS Frameworks
+- **Bootstrap** (v5.3.0): Responsive framework and components for modern web design
+- **Tailwind CSS**: Utility-first CSS framework (mentioned in skills section)
+
+#### UI Component Libraries
+- **Font Awesome** (v6.4.0): Comprehensive icon library for professional iconography
+
+#### Core Technologies
 - **HTML5**: Semantic markup and modern web standards
-- **CSS3**: Custom styling with CSS Grid and Flexbox
-- **Bootstrap 5.3**: Responsive framework and components
-- **Font Awesome 6.4**: Icon library
-- **Google Fonts**: Inter font family
+- **CSS3**: Custom styling with CSS Grid, Flexbox, and CSS custom properties
+- **JavaScript (ES6+)**: Frontend interactivity and functionality
+- **Google Fonts**: Inter font family for modern typography
 
 ### Development Tools
 - **VS Code**: Code editor
